@@ -1,0 +1,38 @@
+/* SearchModule.css */
+
+.overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  pointer-events: none;
+  z-index: 9999;
+}
+
+.container {
+  position: relative;
+  top: 20%;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  pointer-events: auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-color: var(--mantine-color-body);
+}
+
+.blurred-background {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.35); /* Couleur sombre semi-transparente */
+  backdrop-filter: blur(5px);
+  z-index: 9999;
+}
