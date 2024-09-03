@@ -31,7 +31,7 @@ export const SearchModule = (props: SearchModuleProps) => {
             radius="xl"
             size="md"
             placeholder="Taper votre recherche"
-            style={{ width: rem(400) }}
+            className="custom-input"
             rightSectionWidth={42}
             leftSection={
               <IconSearch

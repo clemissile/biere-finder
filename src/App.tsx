@@ -3,7 +3,7 @@ import "@mantine/core/styles.css";
 import "./App.css";
 import { MantineProvider } from "@mantine/core";
 import { useState } from "react";
-import { findBeers } from "./data/bars";
+import { barsData, findBeers } from "./data/bars";
 import { Bar } from "./types/Bar";
 import { HeaderMenu } from "./components/Header/HeaderMenu";
 import { Map } from "./components/Map/Map";
@@ -11,7 +11,7 @@ import { Navbar } from "./components/Navbar/Navbar";
 
 const App = () => {
   const [search, setSearch] = useState<string>("");
-  const [bars, setBars] = useState<Bar[] | null>(null);
+  const [bars, setBars] = useState<Bar[] | null>(barsData);
   const [clickedBar, setClickedBar] = useState<Bar | null>(null);
   const [searchVisible, setSearchVisible] = useState<boolean>(true);
   const [triggerVisibility, setTriggerVisibility] = useState<boolean>(false);
@@ -20,6 +20,7 @@ const App = () => {
     const res = findBeers(search);
     setBars(res);
     setSearchVisible(false);
+    setTriggerVisibility(true);
   };
 
   const handleClickBar = (bar: Bar | null) => {

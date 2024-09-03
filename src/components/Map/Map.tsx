@@ -29,6 +29,7 @@ export const Map = (props: MapProps) => {
         bars.map((bar) => {
           return (
             <Marker
+              key={bar.id}
               position={bar.latlon}
               eventHandlers={{
                 click: () => {

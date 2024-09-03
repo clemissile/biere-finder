@@ -2,6 +2,7 @@ import { Bar } from "src/types/Bar";
 import classes from "./Navbar.module.css";
 import { Button } from "@mantine/core";
 import { IconChevronRight } from "@tabler/icons-react";
+import { BarCard } from "../BarCard/BarCard";
 
 type NavbarProps = {
   bars: Bar[] | null;
@@ -12,6 +13,12 @@ type NavbarProps = {
 
 export const Navbar = (props: NavbarProps) => {
   const { bars, clickedBar, triggerVisibility, setTriggerVisibility } = props;
+
+  const reorderedBars = bars
+    ? clickedBar
+      ? [clickedBar, ...bars.filter((bar) => bar.id !== clickedBar.id)]
+      : bars
+    : [];
 
   return (
     <nav
@@ -29,16 +36,13 @@ export const Navbar = (props: NavbarProps) => {
       </Button>
 
       <div className={classes.navbarMain}>
-        {bars &&
-          bars.map((bar) => (
-            <p key={bar.id}>
-              {clickedBar && bar.id === clickedBar.id ? (
-                <b>{bar.nom}</b>
-              ) : (
-                bar.nom
-              )}
-            </p>
-          ))}
+        {reorderedBars.map((bar) => (
+          <BarCard
+            active={clickedBar !== null && bar.id === clickedBar.id}
+            bar={bar}
+            key={bar.id}
+          />
+        ))}
       </div>
 
       <div className={classes.footer}>

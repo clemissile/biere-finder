@@ -1,5 +1,4 @@
-import { Burger, Container, Button, rem } from "@mantine/core";
-import { useDisclosure } from "@mantine/hooks";
+import { Container, Button, rem } from "@mantine/core";
 import { IconSearch } from "@tabler/icons-react";
 import { MantineLogo } from "@mantinex/mantine-logo";
 import classes from "./HeaderMenu.module.css";
@@ -12,7 +11,6 @@ type HeaderMenuProps = {
 
 export const HeaderMenu = (props: HeaderMenuProps) => {
   const { setBars, setVisible } = props;
-  const [opened, { toggle }] = useDisclosure(false);
 
   return (
     <header className={classes.header}>
@@ -33,7 +31,6 @@ export const HeaderMenu = (props: HeaderMenuProps) => {
               stroke={1.5}
             />
           </Button>
-          <Burger opened={opened} onClick={toggle} size="sm" hiddenFrom="sm" />
         </div>
       </Container>
     </header>

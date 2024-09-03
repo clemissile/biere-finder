@@ -36,3 +36,11 @@
   backdrop-filter: blur(5px);
   z-index: 9999;
 }
+
+.custom-input {
+  width: rem(400px);
+
+  @media only screen and (max-width: 768px) {
+    width: 100%;
+  }
+}
