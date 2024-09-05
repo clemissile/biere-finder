@@ -43,17 +43,17 @@ export const Navbar = (props: NavbarProps) => {
             key={bar.id}
           />
         ))}
-      </div>
 
-      <div className={classes.footer}>
-        <a
-          href="https://olinalab.fr"
-          target="_blank"
-          rel="noopener noreferrer"
-          className={classes.link}
-        >
-          <span>{new Date().getFullYear()} &mdash; &copy; Olina Lab</span>
-        </a>
+        <div className={classes.footer}>
+          <a
+            href="https://olinalab.fr"
+            target="_blank"
+            rel="noopener noreferrer"
+            className={classes.link}
+          >
+            <span>{new Date().getFullYear()} &mdash; &copy; Olina Lab</span>
+          </a>
+        </div>
       </div>
     </nav>
   );

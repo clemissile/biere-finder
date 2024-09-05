@@ -109,6 +109,17 @@ export const barsData: Bar[] = [
           litre: 14,
         },
       },
+      {
+        nom: "Embuscade",
+        type: "",
+        degre: 1000,
+        pays: "normandy",
+        prix: {
+          demi: 4,
+          pinte: 8,
+          litre: 15,
+        },
+      },
     ],
   },
   {
@@ -156,6 +167,16 @@ export const barsData: Bar[] = [
         prix: {
           demi: 4,
           pinte: 7.5,
+        },
+      },
+      {
+        nom: "Embuscade",
+        type: "",
+        degre: 1000,
+        pays: "normandy",
+        prix: {
+          demi: 5.5,
+          pinte: 10,
         },
       },
     ],

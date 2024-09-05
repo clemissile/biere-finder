@@ -2,6 +2,7 @@ import { Card, Image, Text, Group, Badge, Tooltip } from "@mantine/core";
 import classes from "./BarCard.module.css";
 import { Bar } from "src/types/Bar";
 import ReactCountryFlag from "react-country-flag";
+import normandy from "src/assets/images/normandy.svg";
 
 type BarCardProps = {
   active: boolean;
@@ -13,11 +14,19 @@ export const BarCard = (props: BarCardProps) => {
   const features = bar.bieres.map((biere) => {
     const tooltip = `${biere.prix?.demi}€ demi / ${biere.prix?.pinte}€ pinte`;
 
+    const flag =
+      biere.pays === "normandy" ? (
+        <Image w={11} src={normandy} style={{ display: "inline-block" }} />
+      ) : (
+        <ReactCountryFlag svg countryCode={biere.pays} />
+      );
+
+    const type = biere.type === "" ? null : `(${biere.type})`;
+
     return (
       <Tooltip label={tooltip} className={classes.tooltip} key={biere.nom}>
         <Badge className={classes.badge} variant="light">
-          <ReactCountryFlag svg countryCode={biere.pays} /> {biere.nom} (
-          {biere.type})
+          {flag} {biere.nom} {type}
         </Badge>
       </Tooltip>
     );
