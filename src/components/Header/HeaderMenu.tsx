@@ -1,8 +1,8 @@
-import { Container, Button, rem } from "@mantine/core";
+import { Container, Button, Image, Title, rem, Group } from "@mantine/core";
 import { IconSearch } from "@tabler/icons-react";
-import { MantineLogo } from "@mantinex/mantine-logo";
 import classes from "./HeaderMenu.module.css";
 import { Bar } from "src/types/Bar";
+import logo from "src/assets/images/icon-512.png";
 
 type HeaderMenuProps = {
   setBars: (bars: Bar[] | null) => void;
@@ -16,7 +16,10 @@ export const HeaderMenu = (props: HeaderMenuProps) => {
     <header className={classes.header}>
       <Container size="md">
         <div className={classes.inner}>
-          <MantineLogo size={28} />
+          <Group>
+            <Image radius="md" w={28} src={logo} />
+            <Title size="h4">Biere Finder</Title>
+          </Group>
           <Button
             variant="light"
             radius="xl"
